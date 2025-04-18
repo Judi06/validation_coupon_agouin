@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennen Sie uns - Check-myPCS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles spécifiques à la page Nous Connaître */
+        .about-page {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 60px;
+            background: #1a3e72;
+        }
+
+        .about-header h1 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-header h1::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(to right, #4a6bff, #ff6b6b);
+            bottom: -15px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        .about-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            margin-bottom: 50px;
+        }
+
+        .about-section h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .about-section h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #4a6bff;
+            bottom: 0;
+            left: 0;
+        }
+
+        .about-section p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: #4a6bff;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-header p {
+                font-size: 1rem;
+            }
+            
+            .about-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-page {
+                padding: 60px 0;
+            }
+            
+            .about-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <img src="images/xcc.png" alt="Check-myPCS" class="logo">
+                <span class="logo-text">Check-myPCS</span>
+
+                <ul class="nav-links">
+                    <li><a href="index-de.html">Willkommen</a></li>
+                    <li><a href="verifier-coupon-de.html" class="active">Aktivieren Sie einen Gutschein</a></li>
+                    <li><a href="index-de.html#faq">FAQs</a></li>
+                    
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="about-page">
+        <div class="container">
+            <div class="about-header">
+                <h1>Über uns</h1>
+                <p>Entdecken Sie, warum Check-myPCS zur ersten Anlaufstelle für die Aktivierung von Gutscheinen zum Aufladen von Mobiltelefonen geworden ist.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-section">
+                    <h2>Unsere Mission</h2>
+                    <p>Check-myPCS wurde mit einem einfachen, aber wesentlichen Ziel entwickelt: eine zuverlässige und sofortige Lösung zur Überprüfung der Gültigkeit von Gutscheinen zum Aufladen von Mobiltelefonen anzubieten. In einer Welt, in der Betrug und Fehler leider an der Tagesordnung sind, ist es unser Ziel, einen transparenten und sicheren Service zu bieten. Über unsere Plattform kann jeder vor der Einlösung die Gültigkeit seines Coupons prüfen und so unangenehme Überraschungen vermeiden. Wir sind der festen Überzeugung, dass jeder Benutzer das Recht hat, sein Telefon vertrauensvoll aufladen zu können.</p>
+                    
+                    <p>Seit unserem Start haben wir Tausenden von Benutzern geholfen, eingelöste oder abgelaufene Coupons zu vermeiden. Unsere Technologie analysiert Aufladecodes in Echtzeit und gibt eine klare Antwort zu ihrem Status. Wir arbeiten mit großen Mobilfunkbetreibern zusammen, um die Zuverlässigkeit unserer Aktivierungen sicherzustellen. Check-myPCS hat sich als unverzichtbares Tool für Privatpersonen und Profis etabliert. Unsere Mission ist es, weiterhin Innovationen zu entwickeln, um ein immer einfacheres und sichereres Erlebnis zu bieten.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h2>Unsere Expertise</h2>
+                    <p>Check-myPCS wurde von einem Team aus Telekommunikations- und digitalen Sicherheitsexperten gegründet und profitiert von modernstem technischen Know-how. Unsere proprietären Algorithmen analysieren Codemuster, um Anomalien und potenziellen Betrug zu erkennen. Wir haben eine umfassende Datenbank mit Couponformaten entwickelt, die von verschiedenen Betreibern verwendet werden. Dank dieser umfassenden Kenntnisse können wir potenzielle Probleme schnell erkennen, bevor sie sich auf die Benutzer auswirken.</p>
+                    
+                    <p>Unser technisches Team arbeitet ständig an der Verbesserung unserer Aktivierungssysteme. Wir aktualisieren unsere Plattform regelmäßig, um neue Couponformate und technologische Entwicklungen zu berücksichtigen. Die Sicherheit der Daten unserer Benutzer steht bei uns im Mittelpunkt, daher verwenden wir für alle Aktivierungen eine Ende-zu-Ende-Verschlüsselung. Unsere Fachkompetenz wird von unseren Partnern und Benutzern anerkannt und macht Check-myPCS zu einem führenden Anbieter auf diesem Gebiet.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h2>Unser Engagement</h2>
+                    <p>Bei Check-myPCS ist es unser Ziel, einen kostenlosen, zugänglichen Dienst ohne aufdringliche Werbung anzubieten. Wir sind der Meinung, dass jeder das Recht auf die Aktivierung von Coupons haben sollte, ohne Bedingungen. Unser Geschäftsmodell basiert auf fairen Partnerschaften mit Betreibern, sodass wir diesen Dienst den Benutzern kostenlos anbieten können. Transparenz ist einer unserer Grundwerte, mit einer klaren und respektvollen Datenschutzrichtlinie.</p>
+                    
+                    <p>Wir verpflichten uns außerdem, eine einwandfreie Servicequalität mit einer Verfügbarkeitsrate von 99,9 % aufrechtzuerhalten. Unser Support-Team steht Ihnen rund um die Uhr zur Verfügung, um alle Fragen zu beantworten. Jeder Verbesserungsvorschlag wird ernsthaft geprüft, um unsere Plattform weiterzuentwickeln. Wir veröffentlichen regelmäßig transparente Berichte zu unserer Leistung und Markttrends. Dieses starke Engagement für unsere Benutzer ist das, was uns seit unseren Anfängen auszeichnet.</p>
+                </div>
+                
+                <div class="about-section">
+                    <h2>Unsere Vision</h2>
+                    <p>Check-myPCS soll die universelle Plattform für die Aktivierung von Aufladecoupons werden, die alle Betreiber und alle Länder abdeckt. Wir arbeiten aktiv daran, unsere geografische Abdeckung zu erweitern und neue, von unseren Benutzern angeforderte Funktionen zu integrieren. Unsere Vision umfasst die Entwicklung einer noch intuitiveren mobilen Anwendung und die Implementierung nützlicher Zusatzdienste. Wir möchten die Verwaltung von Handy-Aufladungen für alle Benutzer so einfach wie möglich machen.</p>
+                    
+                    <p>Langfristig planen wir, unser Fachwissen auf andere Arten von Aktionscodes und Coupons auszuweiten. Unser Ziel ist es, ein komplettes Ökosystem rund um die Aktivierung und Verwaltung digitaler Vorteile zu schaffen. Wir investieren massiv in Forschung und Entwicklung, um technologischen Entwicklungen zuvorzukommen. Check-myPCS positioniert sich als innovativer Akteur in der mobilen Servicelandschaft. Begleiten Sie uns auf diesem Abenteuer und gestalten Sie die Zukunft des sicheren Aufladens von Mobiltelefonen mit.</p>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer-contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Check-myPCS</h3>
+                    <p>Die zuverlässigste Lösung, um Ihre Handy-Aufladecoupons vor der Verwendung zu überprüfen.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Schnelle Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Willkommen</a></li>
+                        <li><a href="verifier-coupon-de.html">Aktivieren Sie einen Gutschein</a></li>
+                        <li><a href="index.html#faq">FAQs</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="conditions-de.html">Nutzungsbedingungen</a></li>
+                        <li><a href="confidentialite-de.html">Datenschutzrichtlinie</a></li>
+                        <li><a href="nousconnaitre-de.html">Kennen Sie uns</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Check-myPCS. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth Scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#') && 
+                    this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            hamburger.classList.remove('active');
+                            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

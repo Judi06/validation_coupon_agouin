@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-myPCS - Activation de coupons de recharge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        // Liste des langues disponibles
+        const supportedLangs = ['fr', 'en', 'de', 'it', 'es', 'pt'];
+        
+        // Détection de la langue du navigateur (navigator.language retourne par exemple 'fr-FR')
+        const browserLang = navigator.language.split('-')[0]; 
+        
+        // Langue par défaut si non supportée
+        const defaultLang = 'es'; 
+        
+        // Vérifie si la langue du navigateur est supportée
+        const targetLang = supportedLangs.includes(browserLang) ? browserLang : defaultLang;
+        
+        // Redirection vers la page correspondante
+        window.location.href = `index-${targetLang}.html`;
+    </script>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <img src="images/xcc.png" alt="Check-myPCS" class="logo">
+                <span class="logo-text">Check-myPCS</span>
+
+                <!-- Sélecteur de langue - Début -->
+                <div class="language-selector">
+                    <!-- Checkbox invisible pour gérer l'état ouvert/fermé du dropdown -->
+                    <input type="checkbox" id="language-toggle">
+                    
+                    <!-- Bouton visible du sélecteur -->
+                    <label for="language-toggle" class="language-current">
+                        <!-- Icône globe (remplace le drapeau) -->
+                        <i class="fas fa-globe"></i>
+                        <!-- Code de la langue (FR/EN/DE/etc.) -->
+                        <span class="language-code">FR</span>
+                        <!-- Icône flèche -->
+                        <i class="fas fa-chevron-down"></i>
+                    </label>
+                    
+                    <!-- Liste des langues disponibles -->
+                    <ul class="language-dropdown">
+                        <!-- Chaque lien pointe vers la même page dans une autre langue -->
+                        <li><a href="index-fr.html" class="active" title="Français">
+                            <span class="flag-icon flag-fr"></span> Français</a></li>
+                        
+                        <li><a href="index-en.html" title="English">
+                            <span class="flag-icon flag-gb"></span> English</a></li>
+                        
+                        <li><a href="index-de.html" title="Deutsch">
+                            <span class="flag-icon flag-de"></span> Deutsch</a></li>
+                        
+                        <li><a href="index-it.html" title="Italiano">
+                            <span class="flag-icon flag-it"></span> Italiano</a></li>
+
+                        <li><a href="index-es.html" title="Español">
+                            <span class="flag-icon flag-es"></span> Español</a></li>
+                            
+                        <li><a href="index-pt.html" title="Português">
+                            <span class="flag-icon flag-pt"></span> Português</a></li>
+                    </ul>
+                </div>
+                <!-- Sélecteur de langue - Fin -->
+*
+                <ul class="nav-links">
+                    <li><a href="#about">Présentation</a></li>
+                    <li><a href="#benefits">Avantages</a></li>
+                    <li><a href="#why-us">Pourquoi nous choisir</a></li>
+                    <li><a href="#steps">Mes premiers pas</a></li>
+                    <li><a href="#testimonials">Avis Internautes</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+        <div class="container hero-content">
+            <h1>Activez vos coupons de recharge en un clic</h1>
+            <p>Check-myPCS vous permet de vérifier instantanément la validité de vos coupons de recharge mobile avant utilisation, pour éviter les mauvaises surprises.</p>
+            <div class="hero-btns">
+                <a href="verifier-coupon-fr.html" class="btn btn-primary">Vérifier mon Coupon</a>
+                <a href="#benefits" class="btn btn-outline">Nos avantages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Présentation</h2>
+                <p>Découvrez comment Check-myPCS révolutionne la Activation des coupons de recharge mobile</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>La solution simple et efficace pour vos recharges</h3>
+                    <p>Check-myPCS est une plateforme innovante qui vous permet de vérifier en quelques secondes la validité de vos coupons de recharge mobile avant de les utiliser. Plus de mauvaises surprises avec des coupons déjà utilisés ou expirés.</p>
+                    <p>Notre technologie avancée analyse les codes de recharge et vous fournit une réponse instantanée sur leur état. Simple, rapide et sécurisé.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Activation instantanée</h4>
+                                <p>Obtenez des résultats en temps réel sans attente</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Sécurité garantie</h4>
+                                <p>Vos données sont protégées et jamais partagées</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Multi-opérateurs</h4>
+                                <p>Compatibilité avec tous les principaux opérateurs mobiles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/carte-ado2_620x480px.jpg" alt="Activation de coupon">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-title">
+                <h2>Avantages</h2>
+                <p>Découvrez tous les avantages à utiliser Check-myPCS pour vos recharges mobiles</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Gain de temps</h3>
+                    <p>Plus besoin de contacter le service client de votre opérateur pour vérifier un coupon. Notre solution vous donne la réponse en quelques secondes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Sécurité renforcée</h3>
+                    <p>Évitez les arnaques avec des coupons déjà utilisés ou falsifiés. Notre Activation vous protège contre les fraudes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Suivi précis</h3>
+                    <p>Conservez l'historique de toutes vos Activations et recharges pour un meilleur suivi de vos dépenses mobiles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pourquoi nous choisir</h2>
+                <p>Les raisons qui font de Check-myPCS la meilleure solution pour vos recharges mobiles</p>
+            </div>
+            <div class="why-us-content">
+                <div class="why-us-image">
+                    <img src="images/couple-voyage_COMP.jpg" alt="Pourquoi choisir Check-myPCS">
+                </div>
+                <div class="why-us-text">
+                    <h3>Une expérience utilisateur exceptionnelle</h3>
+                    <p>Check-myPCS a été conçu en pensant avant tout à la simplicité d'utilisation et à l'efficacité. Notre interface intuitive permet à n'importe qui de vérifier un coupon en quelques clics seulement.</p>
+                    <div class="why-us-points">
+                        <div class="why-us-point">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Technologie avancée</h4>
+                                <p>Notre algorithme propriétaire analyse les motifs des codes pour détecter les anomalies et les fraudes potentielles.</p>
+                            </div>
+                        </div>
+                        <div class="why-us-point">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Support 24/7</h4>
+                                <p>Notre équipe d'assistance est disponible à tout moment pour répondre à vos questions et résoudre vos problèmes.</p>
+                            </div>
+                        </div>
+                        <div class="why-us-point">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Mises à jour constantes</h4>
+                                <p>Nous améliorons continuellement notre plateforme pour prendre en charge de nouveaux opérateurs et fonctionnalités.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section id="steps" class="steps">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes premiers pas</h2>
+                <p>Découvrez comment utiliser Check-myPCS en quelques étapes simples</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-tree">
+                    <div class="tree-trunk"></div>
+                    
+                    <div class="step-item step-1">
+                        <div class="step-content">
+                            <div class="step-number">1</div>
+                            <h3>Entrez votre coupon</h3>
+                            <p>Saisissez le code de recharge que vous souhaitez vérifier dans notre interface simple et intuitive.</p>
+                        </div>
+                        <div class="step-branch"></div>
+                    </div>
+                    
+                    <div class="step-item step-2">
+                        <div class="step-content">
+                            <div class="step-number">2</div>
+                            <h3>Obtenez les résultats</h3>
+                            <p>Notre système analyse instantanément le code et vous indique s'il est valide et utilisable.</p>
+                        </div>
+                        <div class="step-branch"></div>
+                    </div>
+                    
+                    <div class="step-item step-3">
+                        <div class="step-content">
+                            <div class="step-number">3</div>
+                            <h3>Activez les détails</h3>
+                            <p>Consultez les informations détaillées sur votre coupon : montant, date d'expiration, opérateur.</p>
+                        </div>
+                        <div class="step-branch"></div>
+                    </div>
+                    
+                    <div class="step-item step-4">
+                        <div class="step-content">
+                            <div class="step-number">4</div>
+                            <h3>Rechargez en confiance</h3>
+                            <p>Utilisez votre coupon en toute sérénité ou contactez votre opérateur en cas de problème.</p>
+                        </div>
+                        <div class="step-branch"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Avis Internautes</h2>
+                <p>Ce que nos utilisateurs pensent de Check-myPCS</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Marie D.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Check-myPCS m'a sauvé la vie plusieurs fois ! J'ai évité d'utiliser des coupons déjà expirés grâce à leur Activation rapide. Le service est vraiment indispensable."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Jean P.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"En tant que revendeur, Check-myPCS est un outil indispensable. Je peux vérifier instantanément la validité des coupons, ce qui m'évite des pertes financières."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Amina S.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"L'interface est tellement simple à utiliser ! En tant que personne âgée, j'appréhende souvent les nouvelles technologies, mais Check-myPCS est vraiment intuitif."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Thomas L.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Service fiable, j'ai vérifié 5 coupons sans problème. Un peu lent parfois."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Sophie M.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Rapide et efficace, j'utilise CheckCoupon avant chaque recharge maintenant !"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Marc T.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Correct, mais l'interface pourrait être plus moderne."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>John D.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Saves me from scams! Always check my coupons here first."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Sarah K.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Perfect! Never had a problem with verified coupons."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Michael B.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Works okay but sometimes slow to respond."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Emma W.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Reliable service for all my recharge needs."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>David L.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Best coupon checker I've used. Fast and accurate!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Élodie P.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Vraiment pratique pour éviter les arnaques. Je recommande !"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Karim B.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Détecte pas toujours les coupons périmés. À améliorer."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Carlos M.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Muy útil para verificar recargas. Lo uso siempre."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Ana R.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Perfecto, nunca me ha fallado. ¡Recomendado!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Luis G.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Funciona pero a veces tarda en responder."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Sofía P.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Muy confiable para verificar mis recargas."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Javier T.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"El mejor verificador de cupones. ¡Rápido y preciso!"</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Laura F.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Me sauve tellement de temps ! Super application."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Nicolas R.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Fonctionne bien, mais manque certains opérateurs."</p>
+                </div>              
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Camille D.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Simple d'utilisation et très fiable. Bravo !"</p>
+                </div>              
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>David K.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Correct pour un service gratuit. J'utilise de temps en temps."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Sarah L.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Mon application préférée pour vérifier mes recharges !"</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Pedro S.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Muito útil para verificar recargas. Uso sempre."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Ana C.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Perfeito, nunca me falhou. Recomendo!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Carlos R.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Funciona mas às vezes demora a responder."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Mariana L.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Muito confiável para verificar minhas recargas."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Rafael M.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"O melhor verificador de cupons. Rápido e preciso!"</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Antoine G.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Résultats pas toujours précis selon mon expérience."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Clara M.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"100% efficace, j'ai confiance les yeux fermés."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Mehdi S.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Bon outil, mais parfois lent en heure de pointe."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Julie V.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Indispensable pour mes recharges professionnelles."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Paul B.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Fait le job, mais l'interface mériterait un rafraîchissement."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Thomas B.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Sehr nützlich zum Überprüfen von Guthaben. Immer genutzt."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Anna S.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Perfekt, hat mich noch nie enttäuscht. Empfehlenswert!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Markus W.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Funktioniert, aber manchmal langsam."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Julia K.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Sehr zuverlässig für die Überprüfung meiner Aufladungen."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Stefan H.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Der beste Gutscheinprüfer. Schnell und genau!"</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Emma T.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Vraiment génial, je l'utilise tous les jours !"</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Lucas P.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Peut mieux faire. J'ai eu des faux positifs."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Zoé L.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Parfait ! Jamais déçue depuis 6 mois d'utilisation."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Hugo M.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Très utile, mais parfois des bugs d'affichage."</p>
+                </div>               
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-user">
+                            <h4>Léa C.</h4>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Meilleure appli de Activation que j'ai utilisée !"</p>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary leave-review-btn" id="openReviewModal">Laissez un avis</button>
+        </div>
+    </section>
+
+    <!-- Review Modal -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3>Donnez votre avis sur Check-myPCS</h3>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="reviewName">Nom & Prénom</label>
+                    <input type="text" id="reviewName" required>
+                </div>
+                <div class="form-group">
+                    <label>Note</label>
+                    <div class="rating-stars" id="ratingStars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="ratingValue" value="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewComment">Commentaire</label>
+                    <textarea id="reviewComment" required></textarea>
+                </div>
+                <button type="submit" class="submit-review">Envoyer mon avis</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Merci pour votre avis ! Nous l'avons bien reçu.
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>FAQ</h2>
+                <p>Questions fréquemment posées sur Check-myPCS</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Comment fonctionne la Activation des coupons ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Notre système analyse la structure du code de recharge et vérifie sa validité auprès de nos bases de données et algorithmes propriétaires. Nous comparons le format du code avec ceux des opérateurs partenaires et vérifions qu'il n'a pas déjà été utilisé ou signalé comme frauduleux.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Est-ce que le service est vraiment gratuit ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Oui, la Activation de base des coupons est totalement gratuite. Nous proposons également des options premium avec des fonctionnalités avancées comme l'historique illimité ou les alertes de fraude, mais la Activation simple reste accessible à tous sans frais.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quels opérateurs sont pris en charge ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Nous supportons actuellement tous les principaux opérateurs du marché (Orange, MTN, Vodafone, etc.) dans plusieurs pays. Notre liste d'opérateurs compatibles s'agrandit régulièrement.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Mes données personnelles sont-elles sécurisées ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>Absolument. Nous utilisons un chiffrement de bout en bout pour toutes les données transmises. Les codes de recharge que vous Activez ne sont pas stockés dans notre base de données après analyse.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Prêt à vérifier vos coupons en toute confiance ?</h2>
+            <p>Essayez Check-myPCS dès maintenant et dites adieu aux mauvaises surprises avec vos recharges mobiles.</p>
+            <div class="cta-btns">
+                <a href="verifier-coupon-fr.html" class="btn btn-secondary">Vérifier mon Coupon</a>
+                <a href="#faq" class="btn btn-outline">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Check-myPCS</h3>
+                    <p>La solution la plus fiable pour vérifier vos coupons de recharge mobile avant utilisation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Présentation</a></li>
+                        <li><a href="#benefits">Avantages</a></li>
+                        <li><a href="#why-us">Pourquoi nous choisir</a></li>
+                        <li><a href="#steps">Mes premiers pas</a></li>
+                        <li><a href="#testimonials">Avis Internautes</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Légal</h3>
+                    <ul class="footer-links">
+                        <li><a href="conditions-fr.html">Conditions d'utilisation</a></li>
+                        <li><a href="confidentialite-fr.html">Politique de confidentialité</a></li>
+                        <li><a href="nousconnaitre-fr.html">Nous Connaître</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Check-myPCS. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
