@@ -8,26 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
-    <script>
-        // Liste des langues disponibles
-        const supportedLangs = ['fr', 'en', 'de', 'it'];
-        
-        // Détection de la langue
-        const browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
-        
-        // Langue par défaut
-        const defaultLang = 'fr';
-        
-        // Détermination de la langue cible
-        const targetLang = supportedLangs.includes(browserLang) ? browserLang : defaultLang;
-        
-        // Vérifie qu'on n'est pas déjà sur la bonne page
-        if (!window.location.pathname.includes(`index-${targetLang}.html`)) {
-            console.log('Redirecting to:', targetLang);
-            window.location.href = `index-${targetLang}.html`;
-        }
-    </script>
-
 </head>
 <body>
     <!-- Navigation -->
@@ -1089,5 +1069,24 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Liste des langues disponibles
+        const supportedLangs = ['fr', 'en', 'de', 'it'];
+        
+        // Détection de la langue
+        const browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
+        
+        // Langue par défaut
+        const defaultLang = 'fr';
+        
+        // Détermination de la langue cible
+        const targetLang = supportedLangs.includes(browserLang) ? browserLang : defaultLang;
+        
+        // Vérifie qu'on n'est pas déjà sur la bonne page
+        if (!window.location.pathname.includes(`index-${targetLang}.html`)) {
+            console.log('Redirecting to:', targetLang);
+            window.location.href = `index-${targetLang}.html`;
+        }
+    </script>
 </body>
 </html>
