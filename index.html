@@ -10,13 +10,13 @@
 
     <script>
         // Liste des langues disponibles
-        const supportedLangs = ['fr', 'en', 'de', 'it', 'es', 'pt'];
+        const supportedLangs = ['fr', 'en', 'de', 'it'];
         
         // Détection de la langue du navigateur (navigator.language retourne par exemple 'fr-FR')
         const browserLang = navigator.language.split('-')[0]; 
         
         // Langue par défaut si non supportée
-        const defaultLang = 'es'; 
+        const defaultLang = 'fr'; 
         
         // Vérifie si la langue du navigateur est supportée
         const targetLang = supportedLangs.includes(browserLang) ? browserLang : defaultLang;
