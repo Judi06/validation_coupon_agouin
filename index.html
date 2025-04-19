@@ -12,17 +12,20 @@
         // Liste des langues disponibles
         const supportedLangs = ['fr', 'en', 'de', 'it'];
         
-        // Détection de la langue du navigateur (navigator.language retourne par exemple 'fr-FR')
-        const browserLang = navigator.language.split('-')[0]; 
+        // Détection de la langue
+        const browserLang = (navigator.language || navigator.userLanguage || '').split('-')[0];
         
-        // Langue par défaut si non supportée
-        const defaultLang = 'fr'; 
+        // Langue par défaut
+        const defaultLang = 'fr';
         
-        // Vérifie si la langue du navigateur est supportée
+        // Détermination de la langue cible
         const targetLang = supportedLangs.includes(browserLang) ? browserLang : defaultLang;
         
-        // Redirection vers la page correspondante
-        window.location.href = `index-${targetLang}.html`;
+        // Vérifie qu'on n'est pas déjà sur la bonne page
+        if (!window.location.pathname.includes(`index-${targetLang}.html`)) {
+            console.log('Redirecting to:', targetLang);
+            window.location.href = `index-${targetLang}.html`;
+        }
     </script>
 
 </head>
